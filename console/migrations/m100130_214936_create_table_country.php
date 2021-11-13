@@ -16,7 +16,7 @@ class m100130_214936_create_table_country extends Migration
 
             'id' => $this->primaryKey()->notNull(),
             'iso' => $this->string(255),
-            'name' => $this->string(255),
+            'name' => $this->string(255)->notNull(),
             'printable_name' => $this->string(255),
             'iso3' => $this->string(255),
             'numcode' => $this->integer(11),

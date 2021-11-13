@@ -1,16 +1,16 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\City */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="city-form box box-primary">
+<div class="city-form card card-default">
     <?php $form = ActiveForm::begin(); ?>
-    <div class="box-body table-responsive">
+    <div class="card-body">
 
         <div class="row">
             <div class="col-md-4">
@@ -49,8 +49,8 @@ use yii\widgets\ActiveForm;
 
 
     </div>
-    <div class="box-footer">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success btn-flat']) ?>
+    <div class="card-footer">
+        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-primary']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 </div>

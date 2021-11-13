@@ -22,7 +22,7 @@ class TestEmails extends MailMessage{
 		$this->setLanguage(Yii::$app->language);
 		$this->setSubject(Yii::t('email','new password'));
 		$this->setTo($user->email);
-		$view =  '@common/mail/passwordResetToken-html';
+		$view =  '@common/mail/templates/passwordResetToken';
 		$this->setHtmlBody(Yii::$app->controller->renderPartial($view,['user'=>$user,'password'=>$password]) );
 		$this->send();
 	}

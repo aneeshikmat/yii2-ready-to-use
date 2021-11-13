@@ -48,12 +48,14 @@ class SignupForm extends MainUser
             Yii::$app
                 ->mailer
                 ->compose(
-                    ['html' => 'user/welcomeEmail-html', 'text' => 'user/welcomeEmail-text'],
+                    ['html' => 'templates/signUp'],
                     ['user' => $this]
                 )
                 ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
                 ->setTo($this->email)
-                ->setSubject('Password reset for ' . Yii::$app->name)
+                ->setSubject(Yii::t('app', 'Welcome in {name}', [
+                      "name" => Yii::$app->name
+                    ]))
                 ->send();
         }
 

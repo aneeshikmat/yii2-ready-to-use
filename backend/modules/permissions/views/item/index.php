@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 use mdm\admin\components\RouteRule;
 use mdm\admin\components\Configs;
 
@@ -19,8 +19,8 @@ $rules = array_keys(Configs::authManager()->getRules());
 $rules = array_combine($rules, $rules);
 unset($rules[RouteRule::RULE_NAME]);
 ?>
-<div class="box box-primary">
-    <div class="box-body table-responsive">
+<div class="card card-default">
+    <div class="card-body">
         <h1><?= Html::encode($this->title) ?></h1>
         <p>
             <?= Html::a(Yii::t('rbac-admin', 'Create ' . $labels['Item']), ['create'], ['class' => 'btn btn-primary']) ?>
@@ -44,7 +44,7 @@ unset($rules[RouteRule::RULE_NAME]);
                     'attribute' => 'description',
                     'label' => Yii::t('rbac-admin', 'Description'),
                 ],
-                ['class' => 'yii\grid\ActionColumn',],
+                ['class' => 'kartik\grid\ActionColumn',],
             ],
         ])
         ?>

@@ -1,6 +1,7 @@
 html,
 body {
     height: 100%;
+    overflow-x: hidden;
 }
 
 .wrap {
@@ -122,4 +123,14 @@ a.desc:after {
 
 .phone-number-full-width .intl-tel-input{
     width: 100%;
+}
+
+.content.container {
+    max-width: 90%;
+}
+
+.login-card-wrapper {
+    width: 500px;
+    max-width: 100%;
+    padding: 20px;
 }

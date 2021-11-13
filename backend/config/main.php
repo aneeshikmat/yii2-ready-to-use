@@ -9,17 +9,14 @@ $params = array_merge(
 return [
     'id' => 'app-backend',
     'name' => 'app',
+    'language' => 'en',
+    'sourceLanguage' => 'en',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
-            // enter optional module parameters below - only if you need to
-            // use your own export download action or custom translation
-            // message source
-            // 'downloadAction' => 'gridview/export/download',
-            // 'i18n' => []
         ],
         'i18n' => [
             'class' => 'common\lib\i18nModule\Module',
@@ -60,7 +57,6 @@ return [
             'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
         ],
         'session' => [
-            // this is the name of the session cookie used for login on the backend
             'name' => 'advanced-backend',
         ],
         'log' => [
@@ -80,7 +76,6 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'cdn/cache/<size:\w+>/<path:.+>' => 'image-resize/index',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',

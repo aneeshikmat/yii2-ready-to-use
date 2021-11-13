@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
@@ -23,12 +23,12 @@ if (!empty($extraColumns)) {
     $columns = array_merge($columns, $extraColumns);
 }
 $columns[] = [
-    'class' => 'yii\grid\ActionColumn',
+    'class' => 'kartik\grid\ActionColumn',
     'template' => '{view}'
 ];
 ?>
-<div class="box box-primary">
-    <div id="box-body table-responsive no-padding">
+<div class="card card-default">
+    <div id="card-body no-padding">
 
         <div class="row">
             <div class="col-sm-12">

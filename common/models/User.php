@@ -114,7 +114,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             [['user_type_id', 'country_id', 'city_id', 'is_active', 'media_id'], 'integer'],
-            [['user_type_id', 'first_name', 'last_name'], 'required'],
+            [['user_type_id', 'first_name', 'last_name', 'gender'], 'required'],
             [['first_name', 'last_name', 'phone_number', 'email', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['dob'], 'compare', 'type' => 'date', 'compareValue' => date('Y-m-d'), 'operator' => '<='],

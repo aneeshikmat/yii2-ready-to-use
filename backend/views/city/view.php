@@ -10,8 +10,8 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cities'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="city-view box box-primary">
-    <div class="box-header">
+<div class="city-view card card-default">
+    <div class="card-header">
         <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary btn-flat']) ?>
         <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger btn-flat',
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </div>
-    <div class="box-body table-responsive no-padding">
+    <div class="card-body no-padding">
         <?= DetailView::widget([
             'model' => $model,
             'attributes' => [

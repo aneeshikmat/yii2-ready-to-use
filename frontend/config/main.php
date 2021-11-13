@@ -10,14 +10,10 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'en',
+    'sourceLanguage' => 'en',
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        'reCaptcha' => [
-            'name' => 'reCaptcha',
-            'class' => 'himiklab\yii2\recaptcha\ReCaptcha',
-            'siteKey' => '6Le9WoAUAAAAAHaTtKqnBmxuYW8DHTfAU2v4v5iL',
-            'secret' => '6Le9WoAUAAAAALQ_0w2vDeDxn1zGBYW29SGYKmsW',
-        ],
         'request' => [
             'csrfParam' => '_csrf-frontend',
             'ipHeaders' => [
@@ -37,7 +33,6 @@ return [
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
         'session' => [
-            // this is the name of the session cookie used for login on the frontend
             'name' => 'advanced-frontend',
         ],
         'log' => [
@@ -53,10 +48,13 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
-            'class' => 'common\components\UrlManager',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'article/<category>/<id:\d+>-<slug>' => 'article/view',
+                'article/<id:\d+>' => 'article/view',
+                'article/<category>' => 'article/index',
+                'article' => 'article/index',
                 'cdn/cache/<size:\w+>/<path:.+>' => 'image-resize/index',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',

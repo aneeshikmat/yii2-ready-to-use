@@ -1,6 +1,8 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\forms\PasswordResetRequestForm;
+use common\models\forms\ResetPasswordForm;
 use frontend\components\AuthHandler;
 use common\components\GeoHelper;
 use Yii;
@@ -9,8 +11,6 @@ use yii\web\BadRequestHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 

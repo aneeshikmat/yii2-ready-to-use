@@ -54,7 +54,7 @@ class Country extends \common\models\ActiveRecord
     {
         return [
             [['numcode', 'dialing_code_1', 'dialing_code_2', 'dialing_code_3', 'degree_language_id', 'weight'], 'integer'],
-            [['arabic_name'], 'required'],
+            [['arabic_name', 'name'], 'required'],
             //[['created_at', 'updated_at', 'deleted_at'], 'safe'],
             [['iso', 'name', 'printable_name', 'iso3', 'arabic_name'], 'string', 'max' => 255],
            // [['ip_address'], 'string', 'max' => 40],

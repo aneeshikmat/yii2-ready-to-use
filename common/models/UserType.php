@@ -26,8 +26,9 @@ use yii\helpers\ArrayHelper;
  */
 class UserType extends \common\models\ActiveRecord
 {
-    const ADMIN = 1;
-    const USER = 2;
+    const SUPER_ADMIN = 1;
+    const ADMIN = 2;
+    const USER = 3;
 
 
     const CACHE_KEY = 'cache:tag:userType:list';
@@ -116,7 +117,7 @@ class UserType extends \common\models\ActiveRecord
     public static function getPublicNameList(){
         $list = self::getCachedList(true);
         $list =  ArrayHelper::map($list,'id','name');
-        unset($list[UserType::ADMIN]);
+        unset($list[UserType::ADMIN], $list[UserType::SUPER_ADMIN]);
         return $list;
     }
 }

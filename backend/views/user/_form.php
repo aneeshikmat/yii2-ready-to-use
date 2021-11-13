@@ -10,7 +10,7 @@ use kartik\widgets\DatePicker;
 use kartik\widgets\FileInput;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\User */
@@ -44,7 +44,7 @@ JS
     , \yii\web\View::POS_END);
 ?>
 
-<div class="user-form box box-primary">
+<div class="user-form card card-default">
     <?php $form = ActiveForm::begin([
         'id' => 'user-form',
         'enableClientValidation' => true,
@@ -56,7 +56,7 @@ JS
             'id' => 'user-form',
         ],
     ]); ?>
-    <div class="box-body table-responsive">
+    <div class="card-body">
 
         <div class="row">
 
@@ -180,8 +180,8 @@ JS
         <?= Html::errorSummary($model) ?>
     </div>
 
-    <div class="box-footer">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success btn-flat']) ?>
+    <div class="card-footer">
+        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-primary']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 </div>

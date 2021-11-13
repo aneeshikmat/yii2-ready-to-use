@@ -3,14 +3,14 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=127.0.0.1;dbname=mahllat_store',
+            'dsn' => 'mysql:host=mysql;dbname=skeleton',
             'username' => 'root',
             'password' => 'root',
             'charset' => 'utf8',
         ],
         'mongodb' => [
             'class' => '\yii\mongodb\Connection',
-            'dsn' => 'mongodb://127.0.0.1:27017/mahllat_store',
+            'dsn' => 'mongodb://127.0.0.1:27017/skeleton',
 //            'options' => [
 //                "username" => "Username",
 //                "password" => "Password"
@@ -19,7 +19,7 @@ return [
         'cache' => [
             'class' => 'yii\redis\Cache',
             'redis' => [
-                'hostname' => '127.0.0.1',
+                'hostname' => 'redis',
                 'port' => 6379,
                 'database' => 0,
             ]
@@ -52,8 +52,8 @@ return [
 //            'useFileTransport' => true,
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.mailgun.org',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
-                'username' => 'username',
+                'host' => 'smtp.gmail.com',  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+                'username' => 'yii2Test@yii2Test.com',
                 'password' => 'password',
                 'port' => '587', // Port 25 is a very common port too
                 'encryption' => 'tls',

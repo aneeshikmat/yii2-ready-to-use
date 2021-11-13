@@ -1,0 +1,11 @@
+/**
+* Custom Css For Fixing Arabic Admin-lte Issues after we convert and build dynamic version of RTL for Bootstrap4 or adminlte
+*/
+
+.alert-dismissible .close, .alert-dismissible .mailbox-attachment-close {
+    right: inherit;
+}
+
+.ml-auto, .mx-auto {
+    margin-left: inherit !important;
+}

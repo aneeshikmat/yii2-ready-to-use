@@ -1,16 +1,16 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\UserType */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="user-type-form box box-primary">
+<div class="user-type-form card card-default">
     <?php $form = ActiveForm::begin(); ?>
-    <div class="box-body table-responsive">
+    <div class="card-body">
 
         <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
@@ -18,8 +18,8 @@ use yii\widgets\ActiveForm;
 
 
     </div>
-    <div class="box-footer">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success btn-flat']) ?>
+    <div class="card-footer">
+        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-primary']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 </div>

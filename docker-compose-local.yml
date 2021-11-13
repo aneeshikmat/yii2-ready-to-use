@@ -1,0 +1,67 @@
+version: '3.2'
+
+# networks:
+#   my-new-network:
+#     driver: bridge
+
+services:
+
+  frontend:
+    build: frontend
+    ports:
+      - 20080:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+    # networks:
+    #   - my-new-network
+
+  backend:
+    build: backend
+    ports:
+      - 21080:80
+    volumes:
+      # Re-use local composer cache via host-volume
+      - ~/.composer-docker/cache:/root/.composer/cache:delegated
+      # Mount source-code for development
+      - ./:/app
+    # networks:
+    #   - my-new-network
+
+  mysql:
+    image: mysql:8.0.16
+    restart: always
+    command: --character-set-server=utf8 --collation-server=utf8_general_ci
+    volumes:
+      - /var/www/mysql_lib_sk:/var/lib/mysql #change it a directory share with you daemon
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=skeleton
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+    # networks:
+    #   - my-new-network
+
+  redis:
+    image: redis:5.0-alpine
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '8888:80'
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+    depends_on:
+      - mysql
+    # networks:
+    #   - my-new-network
+
+  #pgsql:
+  #  image: postgres:9.5
+  #  environment:
+  #    - POSTGRES_DB=yii2advanced
+  #    - POSTGRES_USER=yii2advanced
+  #    - POSTGRES_PASSWORD=secret

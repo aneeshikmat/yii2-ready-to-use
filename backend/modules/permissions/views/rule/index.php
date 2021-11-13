@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\widgets\Pjax;
 
 /* @var $this  yii\web\View */
@@ -12,8 +12,8 @@ use yii\widgets\Pjax;
 $this->title = Yii::t('rbac-admin', 'Rules');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="box box-primary">
-    <div class="box-body table-responsive">
+<div class="card card-default">
+    <div class="card-body">
         <h1><?= Html::encode($this->title) ?></h1>
 
         <p>
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'name',
                     'label' => Yii::t('rbac-admin', 'Name'),
                 ],
-                ['class' => 'yii\grid\ActionColumn',],
+                ['class' => 'kartik\grid\ActionColumn',],
             ],
         ]);
         ?>

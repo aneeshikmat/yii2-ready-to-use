@@ -30,8 +30,8 @@ $this->registerJs("var _opts = {$opts};");
 $this->registerJs($this->render('_script.js'));
 $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>';
 ?>
-<div class="box box-primary">
-    <div class="box-body table-responsive">
+<div class="card card-default">
+    <div class="card-body">
         <h1><?= $this->title; ?></h1>
 
         <div class="row">

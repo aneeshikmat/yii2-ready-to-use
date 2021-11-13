@@ -15,7 +15,7 @@ use common\models\UserType;
 class UserController extends Controller
 {
 
-    public function actionCreate($first_name, $last_name, $email, $password, $user_type_id = UserType::ADMIN)
+    public function actionCreate($first_name, $last_name, $email, $password, $user_type_id = UserType::SUPER_ADMIN)
     {
         $user = new User();
         $user->first_name = $first_name;

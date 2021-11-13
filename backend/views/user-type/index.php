@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\search\UserTypeSearch */
@@ -10,11 +10,11 @@ use yii\grid\GridView;
 $this->title = Yii::t('app', 'User Types');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="user-type-index box box-primary">
-    <div class="box-header with-border">
-        <?= Html::a(Yii::t('app', 'Create User Type'), ['create'], ['class' => 'btn btn-success btn-flat']) ?>
+<div class="user-type-index card card-default">
+    <div class="card-header with-border">
+        <?= Html::a(Yii::t('app', 'Create User Type'), ['create'], ['class' => 'btn btn-primary']) ?>
     </div>
-    <div class="box-body table-responsive no-padding">
+    <div class="card-body no-padding">
         <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
@@ -52,15 +52,15 @@ $this->params['breadcrumbs'][] = $this->title;
                         ]
                     ])
                 ],
-//                'created_by',
-//                 'updated_by',
+                //  'created_by',
+                // 'updated_by',
                 // 'is_deleted',
                 // 'deleted_at',
                 // 'deleted_by',
                 // 'ip_address',
                 // 'user_agent',
 
-                ['class' => 'yii\grid\ActionColumn'],
+                ['class' => 'kartik\grid\ActionColumn'],
             ],
         ]); ?>
     </div>

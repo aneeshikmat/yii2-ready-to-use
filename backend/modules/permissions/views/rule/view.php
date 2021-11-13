@@ -11,8 +11,8 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', 'Rules'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="box box-primary">
-    <div class="box-body table-responsive">
+<div class="card card-default">
+    <div class="card-body">
         <h1><?= Html::encode($this->title) ?></h1>
 
         <p>

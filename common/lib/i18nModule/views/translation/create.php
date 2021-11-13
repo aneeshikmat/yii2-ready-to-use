@@ -2,7 +2,7 @@
 
 use common\lib\i18nModule\Module;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $form yii\widgets\ActiveForm */
@@ -12,9 +12,9 @@ $this->title = Module::t('Create Translation');
 $this->params['breadcrumbs'][] = ['label' => Module::t('Source Messages'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = Module::t('Create');
 ?>
-<div class="element-box source-message-update  box box-primary">
+<div class="element-box source-message-update  card card-default">
 
-    <div class="box-body table-responsive">
+    <div class="card-body">
         <h1><?= Html::encode($this->title) ?></h1>
 
         <div class="source-message-form">

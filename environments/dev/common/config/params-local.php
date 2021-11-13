@@ -1,10 +1,11 @@
 <?php
 return [
+    'bsVersion' => '4.x', //kartik-v
     'urls' => [
-        'backend' => 'http://mahllat-store.test/admin/',
-        'frontend' => 'http://mahllat-store.test/',
-        'api' => 'http://mahllat-store.test/',
-        'cdn' => 'http://mahllat-store.test/cdn/',
+        'backend' => 'http://localhost:20080/admin/',
+        'frontend' => 'http://localhost:20080/',
+        'api' => 'http://localhost:20080/',
+        'cdn' => 'http://localhost:20080/cdn/',
     ],
     'ffmpeg' => '/usr/bin/ffmpeg',
     'BEANSTALK' => [

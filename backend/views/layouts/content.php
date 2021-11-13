@@ -1,31 +1,48 @@
 <?php
-use yii\widgets\Breadcrumbs;
-use dmstr\widgets\Alert;
+/* @var $content string */
+
+use common\widgets\Alert;
+use yii\bootstrap4\Breadcrumbs;
 
 ?>
 <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
     <section class="content-header">
-        <?php if (isset($this->blocks['content-header'])) { ?>
-            <h1><?= $this->blocks['content-header'] ?></h1>
-        <?php } else { ?>
-            <h1>
-                <?php
-                if ($this->title !== null) {
-                    echo \yii\helpers\Html::encode($this->title);
-                } else {
-                    echo \yii\helpers\Inflector::camel2words(
-                        \yii\helpers\Inflector::id2camel($this->context->module->id)
-                    );
-                    echo ($this->context->module->id !== \Yii::$app->id) ? '<small>Module</small>' : '';
-                } ?>
-            </h1>
-        <?php } ?>
-
-        <?= Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : []]) ?>
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">
+                      <?php
+                      if (!is_null($this->title)) {
+                        echo \yii\helpers\Html::encode($this->title);
+                      } else {
+                        echo \yii\helpers\Inflector::camelize($this->context->id);
+                      }
+                      ?>
+                    </h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                  <?php
+                  echo Breadcrumbs::widget([
+                      'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                      'options' => [
+                          'class' => 'breadcrumb float-sm-right'
+                      ]
+                  ]);
+                  ?>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
     </section>
+    <!-- /.content-header -->
 
+    <!-- Main content -->
     <section class="content">
+      <div class="container-fluid">
         <?= Alert::widget() ?>
+
         <?= $content ?>
+      </div>
     </section>
+    <!-- /.content -->
 </div>

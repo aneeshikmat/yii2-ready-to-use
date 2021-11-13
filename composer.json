@@ -14,16 +14,14 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "php": ">=5.4.0",
-        "yiisoft/yii2": "~2.0.6",
-        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "php": ">=7.0.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap4": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
-        "dmstr/yii2-adminlte-asset": "^2.1",
+        "hail812/yii2-adminlte3": "~1.1",
         "yiisoft/yii2-redis": "~2.0.0",
-        "kartik-v/yii2-grid": "@dev",
-        "kartik-v/yii2-krajee-base": "@dev",
-        "kartik-v/yii2-editable": "1.7.6",
-        "yiisoft/yii2-mongodb": "^2.1",
+        "kartik-v/yii2-grid": "dev-master",
+        "kartik-v/yii2-krajee-base": "dev-master",
         "pda/pheanstalk": "^3.1",
         "yiisoft/yii2-queue": "^2.1",
         "yiisoft/yii2-authclient": "^2.1",
@@ -44,14 +42,21 @@
         "mootensai/yii2-relation-trait": "dev-master",
         "himiklab/yii2-recaptcha-widget": "^1.2",
         "yiisoft/yii2-shell": "2.0.2",
-        "baha2odeh/yii2-easy-fileupload-behavior": "*"
+        "baha2odeh/yii2-easy-fileupload-behavior": "*",
+        "codemix/yii2-localeurls": "^1.7",
+        "cetver/yii2-language-selector": "^1.0"
     },
     "require-dev": {
-        "yiisoft/yii2-debug": "~2.0.0",
-        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-debug": "~2.1.0",
+        "yiisoft/yii2-gii": "~2.2.0",
         "yiisoft/yii2-faker": "~2.0.0",
-        "codeception/base": "^2.2.3",
-        "codeception/verify": "~0.3.1"
+        "codeception/codeception": "^4.0",
+        "codeception/module-asserts": "^1.0",
+        "codeception/module-yii2": "^1.0",
+        "codeception/module-filesystem": "^1.0",
+        "codeception/verify": "~0.5.0 || ~1.1.0",
+        "symfony/browser-kit": ">=2.7 <=4.2.4"
+
     },
     "config": {
         "process-timeout": 1800,

@@ -1,0 +1,15 @@
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    padding-left: inherit;
+    padding-right: 5px;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        text-align: right;
+    }
+}
+
+* {
+    text-align: right;
+}

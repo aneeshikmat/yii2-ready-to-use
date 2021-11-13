@@ -15,7 +15,7 @@ use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 
 /**
  * UserController implements the CRUD actions for User model.

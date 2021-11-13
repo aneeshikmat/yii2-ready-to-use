@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 use mdm\admin\components\RouteRule;
 use mdm\admin\AutocompleteAsset;
 use yii\helpers\Json;

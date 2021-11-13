@@ -5,16 +5,16 @@ use kartik\widgets\FileInput;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\web\JsExpression;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="article-form box box-primary">
+<div class="article-form card card-default">
     <?php $form = ActiveForm::begin(); ?>
-    <div class="box-body table-responsive">
+    <div class="card-body">
 
         <div class="row">
             <div class="col-md-6">
@@ -38,7 +38,7 @@ use yii\widgets\ActiveForm;
                         'placeholder' => Yii::t('app', 'Select User'),
                         'allowClear' => true,
                         'ajax' => [
-                            'url' => \yii\helpers\Url::to(['helper/user','user_type_id'=>[UserType::ADMIN,UserType::USER]]),
+                            'url' => \yii\helpers\Url::to(['helper/user','user_type_id'=>[UserType::SUPER_ADMIN,UserType::ADMIN,UserType::USER]]),
                             'dataType' => 'json',
                             'data' => new JsExpression('function(params) { return {q:params.term}; }')
                         ],
@@ -100,8 +100,8 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'is_active')->checkbox() ?>
 
     </div>
-    <div class="box-footer">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success btn-flat']) ?>
+    <div class="card-footer">
+        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-primary']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 </div>
